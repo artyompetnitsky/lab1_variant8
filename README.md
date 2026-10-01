@@ -251,23 +251,63 @@ g++ -std=c++17 -Wall -Wextra src/task3_max_min.cpp -o build/task3_max_min
 
 ## Задание 4. Git / GitHub
 
-Репозиторий содержит исходный код `.cpp`, `.gitignore`, `README.md` и историю из нескольких
-осмысленных коммитов. Папка `build/` с исполняемыми файлами в репозиторий не попадает (см. `.gitignore`).
+Репозиторий: **https://github.com/artyompetnitsky/lab1-variant8**
 
-Порядок работы, который использовался:
+Автор всех коммитов — `Artyom Petnitsky <artyompetnitsky@gmail.com>`.
+
+В репозитории лежат исходный код `.cpp`, решение `.sln`, `.gitignore`, `README.md` и история
+из шести осмысленных коммитов. Папка `build/` с исполняемыми файлами и служебная `.vscode/`
+в репозиторий не попадают — см. `.gitignore`.
+
+| Файл | Назначение |
+|---|---|
+| `lab1-variant8.sln` | решение Visual Studio |
+| `src/task2_bmi.cpp` | задание 2 |
+| `src/task3_max_min.cpp` | задание 3 |
+| `docs/task1_flowchart.drawio` | задание 1, блок-схема |
+| `.gitignore` | корректный файл исключений |
+| `README.md` | этот отчёт |
+
+### Как это было сделано
 
 ```bash
-git init
-git add .gitignore src docs
-git commit -m "lab1 var8: задания 1-3 — блок-схема, BMI, макс/мин из трёх чисел"
+git init -b main
+git config user.name "Artyom Petnitsky"
+git config user.email "artyompetnitsky@gmail.com"
 
-# после тестирования: README, скрипты сборки, правки по результатам прогонов
+# коммит 1 - рабочая версия заданий 1-3
+git add .gitignore src docs scripts
+git commit -m "lab1 var8: zadaniya 1-3 - blok-shema, BMI, max/min iz treh chisel"
+
+# коммит 2 - README и скрипты после тестирования
 git add README.md scripts
-git commit -m "lab1 var8: README со схемой решения и проверенными наборами данных, скрипты сборки"
+git commit -m "lab1 var8: README s opisaniem resheniya i proverennymi dannymi, ..."
 
-git remote add origin https://github.com/<аккаунт>/lab1-variant8.git
+git remote add origin https://github.com/artyompetnitsky/lab1-variant8.git
 git push -u origin main
 ```
 
-Никаких паролей, токенов и API-ключей в репозитории нет — авторизация GitHub выполняется локально
-через Git Credential Manager, учётные данные в файлы проекта не попадают.
+### Как опубликовать (для повторения)
+
+1. Открыть **«Командную строку»** (обычная, не PowerShell).
+2. Перейти в папку проекта:
+
+   ```bat
+   cd /d "C:\Users\ARTYOM\Documents\Проект по умолчанию\lab1-variant8"
+   ```
+
+3. Выполнить:
+
+   ```bat
+   git push -u origin main
+   ```
+
+4. Войти в аккаунт `artyompetnitsky` — GitHub попросит пароль, но для Git его больше не принимает.
+   Вместо пароля нужен **Personal Access Token**: `Settings → Developer settings →
+   Personal access tokens → Tokens (classic) → Generate new token → scopes: repo`.
+5. Убедиться, что оба коммита видны: `git log --oneline` или страница репозитория на GitHub.
+6. Преподавателю отправить ссылку: **https://github.com/artyompetnitsky/lab1-variant8**
+
+Никакие пароли, токены и API-ключи не коммитились и не хранятся в проекте — авторизация
+GitHub выполняется локально через Git Credential Manager, учётные данные в файлы проекта
+не попадают.
