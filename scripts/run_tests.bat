@@ -1,7 +1,9 @@
 @echo off
 rem ---------------------------------------------------------------------------
-rem Ð¢ÐµÑÑ‚Ð¾Ð²Ñ‹Ðµ Ð¿Ñ€Ð¾Ð³Ð¾Ð½Ñ‹ Ð·Ð°Ð´Ð°Ð½Ð¸Ð¹ 2 Ð¸ 3.
-rem Ð˜ÑÐ¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ð½Ð¸Ðµ: scripts\run_tests.bat   (ÑÐ½Ð°Ñ‡Ð°Ð»Ð° Ð²Ñ‹Ð¿Ð¾Ð»Ð½Ð¸Ñ‚Ðµ scripts\build.bat)
+rem ’¥áâ®¢ë¥ ¯à®£®­ë § ¤ ­¨© 2 ¨ 3.
+rem ˆá¯®«ì§®¢ ­¨¥: scripts\run_tests.bat   (á­ ç «  ¢ë¯®«­¨â¥ scripts\build.bat)
+rem ‚­¨¬ ­¨¥: ¢ áâà®ª å echo ­¥«ì§ï ¨á¯®«ì§®¢ âì á¨¬¢®« '>' - cmd áç¨â ¥â ¥£®
+rem ¯¥à¥­ ¯à ¢«¥­¨¥¬ ¢ë¢®¤ . ˆá¯®«ì§ã©â¥ '=' ¨«¨ á«®¢® "¤ ñâ".
 rem ---------------------------------------------------------------------------
 setlocal
 
@@ -16,39 +18,40 @@ if not exist "%TASK2%" (
 
 echo ===================== TASK 2: BMI =====================
 echo.
-echo --- Test 1: mass 70, height 1.75  =>  BMI 22.86 (norm) ---
+echo --- Test 1: mass 70, height 1.75 - BMI 22.86 (norm) ---
 echo 70 1.75 | "%TASK2%"
 echo.
-echo --- Test 2: mass 30, height 1.60  =>  BMI 11.72 (deficit) ---
+echo --- Test 2: mass 30, height 1.60 - BMI 11.72 (deficit) ---
 echo 30 1.60 | "%TASK2%"
 echo.
-echo --- Test 3: mass 95, height 1.90  =>  BMI 26.32 (overweight) ---
+echo --- Test 3: mass 95, height 1.90 - BMI 26.32 (overweight) ---
 echo 95 1.90 | "%TASK2%"
 echo.
-echo --- Test 4 (error path): height 0 => must be rejected ---
+echo --- Test 4 (error path): height 0 - must be rejected ---
 echo 70 0 | "%TASK2%"
 
 echo.
 echo ================= TASK 3: max / min =================
 echo.
-echo --- Test 1: 3 7 -2        =>  max 7.00,  min -2.00 ---
+echo --- Test 1: 3 7 -2   - max 7.00, min -2.00 ---
 echo 3 7 -2 | "%TASK3%"
 echo.
-echo --- Test 2: 7 3 -2        =>  max 7.00,  min -2.00 ---
+echo --- Test 2: 7 3 -2   - max 7.00, min -2.00 ---
 echo 7 3 -2 | "%TASK3%"
 echo.
-echo --- Test 3: -2 5 3        =>  max 5.00,  min -2.00 ---
+echo --- Test 3: -2 5 3   - max 5.00, min -2.00 ---
 echo -2 5 3 | "%TASK3%"
 echo.
-echo --- Test 4: 5 5 5         =>  all three are equal ---
+echo --- Test 4: 5 5 5    - all three are equal ---
 echo 5 5 5 | "%TASK3%"
 echo.
-echo --- Test 5: -5 -5 -5      =>  all three are equal ---
+echo --- Test 5: -5 -5 -5 - all three are equal ---
 echo -5 -5 -5 | "%TASK3%"
 
 echo.
 echo ========= FLOWCHART CHECK (task 1, see README) =========
-echo Data set A: S = 30   -> S^50 yes -> discount 0%%  -> total 30.00
-echo Data set B: S = 75   -> S^50 no  -> S^100 yes -> discount 5%%  -> total 71.25
-echo Data set C: S = 150  -> S^50 no  -> S^100 no  -> discount 10%% -> total 135.00
+echo Data set A: S = 30  - S less than 50 is true  - discount 0 percent  - total 30.00
+echo Data set B: S = 75  - S less than 50 is false, S less than 100 true  - 5 percent  - total 71.25
+echo Data set C: S = 150 - both conditions false - discount 10 percent - total 135.00
+echo Full branch-by-branch trace - in README.md, section "Zadanie 1".
 endlocal

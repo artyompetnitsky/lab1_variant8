@@ -16,28 +16,28 @@ if exist "%VSWHERE%" (
 )
 
 if not defined VSPATH (
-    echo [ОШИБКА] Не найдена установка Visual Studio с компонентами C++.
-    echo Откройте "Developer Command Prompt for VS" и повторите сборку.
+    echo [ERROR] Visual Studio with C++ components not found.
+    echo Open "Developer Command Prompt for VS" and run the build again.
     exit /b 1
 )
 
 call "%VSPATH%\VC\Auxiliary\Build\vcvars64.bat" >nul
 if errorlevel 1 (
-    echo [ОШИБКА] Не удалось инициализировать окружение MSVC.
+    echo [ERROR] Failed to initialise the MSVC environment.
     exit /b 1
 )
 
 if not exist "%OUT%" mkdir "%OUT%"
 
-echo Компиляция task2_bmi.cpp ...
-cl /nologo /EHsc /std:c++17 /W4 /utf-8 /Fe:"%OUT%\task2_bmi.exe" "%ROOT%\src\task2_bmi.cpp"
+echo Compiling task2_bmi.cpp ...
+cl /nologo /EHsc /std:c++17 /W4 /utf-8 /Fo:"%OUT%\\" /Fe:"%OUT%\task2_bmi.exe" "%ROOT%\src\task2_bmi.cpp"
 if errorlevel 1 exit /b 1
 
-echo Компиляция task3_max_min.cpp ...
-cl /nologo /EHsc /std:c++17 /W4 /utf-8 /Fe:"%OUT%\task3_max_min.exe" "%ROOT%\src\task3_max_min.cpp"
+echo Compiling task3_max_min.cpp ...
+cl /nologo /EHsc /std:c++17 /W4 /utf-8 /Fo:"%OUT%\\" /Fe:"%OUT%\task3_max_min.exe" "%ROOT%\src\task3_max_min.cpp"
 if errorlevel 1 exit /b 1
 
 echo.
-echo [OK] Исполняемые файлы собраны в папке build\:
+echo [OK] Executables are in the build\ folder:
 dir /b "%OUT%\*.exe"
 endlocal
