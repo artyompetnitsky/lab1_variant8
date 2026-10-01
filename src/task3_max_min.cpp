@@ -4,55 +4,40 @@
 // Входные данные: три вещественных числа a, b, c.
 // Результат: наибольшее и наименьшее из них.
 // Если все три числа равны — сообщить об этом отдельно.
-// Массивы не используются: сравнения выполняются через обычные условия.
+// Массивы не используются: сравнения выполняются через обычные условии.
 // =============================================================================
 
 #include <iostream>
-#include <iomanip>
+using namespace std;
 
-int main()
-{
-    double a = 0.0;
-    double b = 0.0;
-    double c = 0.0;
+int main() {
+    double a, b, c;
+    double max, min;
 
-    std::cout << "=== Задание 3. Максимум и минимум из трёх чисел ===\n";
-    std::cout << "Введите три числа (через пробел): ";
+    cout << "Введите три числа: ";
+    cin >> a >> b >> c;
 
-    if (!(std::cin >> a >> b >> c)) {
-        std::cerr << "Ошибка: ожидались три числовых значения (a, b, c).\n";
-        return 1;
-    }
-
-    std::cout << std::fixed << std::setprecision(2);
-    std::cout << "a = " << a << ", b = " << b << ", c = " << c << "\n";
-
-    // Отдельная ветка: все три значения равны
     if (a == b && b == c) {
-        std::cout << "Все три числа равны: " << a << "\n";
-        return 0;
+        cout << "Все три числа равны." << endl;
     }
+    else {
+        if (a >= b && a >= c)
+            max = a;
+        else if (b >= a && b >= c)
+            max = b;
+        else
+            max = c;
 
-    // Поиск максимума и минимума без массивов
-    double maximum = a;
-    double minimum = a;
+        if (a <= b && a <= c)
+            min = a;
+        else if (b <= a && b <= c)
+            min = b;
+        else
+            min = c;
 
-    if (b > maximum) {
-        maximum = b;
+        cout << "Максимум: " << max << endl;
+        cout << "Минимум: " << min << endl;
     }
-    if (c > maximum) {
-        maximum = c;
-    }
-
-    if (b < minimum) {
-        minimum = b;
-    }
-    if (c < minimum) {
-        minimum = c;
-    }
-
-    std::cout << "Максимум: " << maximum << "\n";
-    std::cout << "Минимум:  " << minimum << "\n";
 
     return 0;
 }

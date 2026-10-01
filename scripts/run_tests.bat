@@ -1,9 +1,9 @@
 @echo off
 rem ---------------------------------------------------------------------------
-rem í•·‚Æ¢Î• Ø‡Æ£Æ≠Î ß†§†≠®© 2 ® 3.
-rem à·ØÆ´ÏßÆ¢†≠®•: scripts\run_tests.bat   (·≠†Á†´† ¢ÎØÆ´≠®‚• scripts\build.bat)
-rem Ç≠®¨†≠®•: ¢ ·‚‡Æ™†Â echo ≠•´ÏßÔ ®·ØÆ´ÏßÆ¢†‚Ï ·®¨¢Æ´ '>' - cmd ·Á®‚†•‚ •£Æ
-rem Ø•‡•≠†Ø‡†¢´•≠®•¨ ¢Î¢Æ§†. à·ØÆ´Ïß„©‚• '=' ®´® ·´Æ¢Æ "§†Ò‚".
+rem –¢–µ—Å—Ç–æ–≤—ã–µ –ø—Ä–æ–≥–æ–Ω—ã –∑–∞–¥–∞–Ω–∏–π 2 –∏ 3.
+rem –ò—Å–ø–æ–ª—å–∑–æ–≤–∞–Ω–∏–µ: scripts\run_tests.bat   (—Å–Ω–∞—á–∞–ª–∞ –≤—ã–ø–æ–ª–Ω–∏—Ç–µ scripts\build.bat)
+rem –í–Ω–∏–º–∞–Ω–∏–µ: –≤ —Å—Ç—Ä–æ–∫–∞—Ö echo –Ω–µ–ª—å–∑—è –∏—Å–ø–æ–ª—å–∑–æ–≤–∞—Ç—å —Å–∏–º–≤–æ–ª '>' - cmd —Å—á–∏—Ç–∞–µ—Ç –µ–≥–æ
+rem –ø–µ—Ä–µ–Ω–∞–ø—Ä–∞–≤–ª–µ–Ω–∏–µ–º –≤—ã–≤–æ–¥–∞. –ò—Å–ø–æ–ª—å–∑—É–π—Ç–µ '=' –∏–ª–∏ —Å–ª–æ–≤–æ "–¥–∞—ë—Ç".
 rem ---------------------------------------------------------------------------
 setlocal
 
@@ -18,13 +18,13 @@ if not exist "%TASK2%" (
 
 echo ===================== TASK 2: BMI =====================
 echo.
-echo --- Test 1: mass 70, height 1.75 - BMI 22.86 (norm) ---
+echo --- Test 1: mass 70, height 1.75 - BMI 22.8571 ---
 echo 70 1.75 | "%TASK2%"
 echo.
-echo --- Test 2: mass 30, height 1.60 - BMI 11.72 (deficit) ---
+echo --- Test 2: mass 30, height 1.60 - BMI 11.7187 ---
 echo 30 1.60 | "%TASK2%"
 echo.
-echo --- Test 3: mass 95, height 1.90 - BMI 26.32 (overweight) ---
+echo --- Test 3: mass 95, height 1.90 - BMI 26.3158 ---
 echo 95 1.90 | "%TASK2%"
 echo.
 echo --- Test 4 (error path): height 0 - must be rejected ---
@@ -33,13 +33,13 @@ echo 70 0 | "%TASK2%"
 echo.
 echo ================= TASK 3: max / min =================
 echo.
-echo --- Test 1: 3 7 -2   - max 7.00, min -2.00 ---
+echo --- Test 1: 3 7 -2   - max 7, min -2 ---
 echo 3 7 -2 | "%TASK3%"
 echo.
-echo --- Test 2: 7 3 -2   - max 7.00, min -2.00 ---
+echo --- Test 2: 7 3 -2   - max 7, min -2 ---
 echo 7 3 -2 | "%TASK3%"
 echo.
-echo --- Test 3: -2 5 3   - max 5.00, min -2.00 ---
+echo --- Test 3: -2 5 3   - max 5, min -2 ---
 echo -2 5 3 | "%TASK3%"
 echo.
 echo --- Test 4: 5 5 5    - all three are equal ---

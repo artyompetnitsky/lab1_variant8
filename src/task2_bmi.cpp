@@ -2,53 +2,30 @@
 // Лабораторная работа №1, вариант 8
 // Задание 2: индекс массы тела (BMI).
 // Входные данные: масса (кг) и рост (м) — вещественные числа (double).
-// Результат: значение BMI = mass / (height * height).
+// Результат: BMI = mass / (height * height).
 // Рост должен быть положительным, иначе выводится сообщение об ошибке.
 // =============================================================================
 
 #include <iostream>
-#include <iomanip>
+using namespace std;
 
-int main()
-{
-    double mass  = 0.0;   // масса тела, кг
-    double height = 0.0;  // рост, м
+int main() {
+    double mass, height, bmi;
 
-    std::cout << "=== Задание 2. Индекс массы тела (BMI) ===\n";
-    std::cout << "Введите массу тела в килограммах и рост в метрах: ";
+    cout << "Введите массу (кг): ";
+    cin >> mass;
 
-    if (!(std::cin >> mass >> height)) {
-        std::cerr << "Ошибка: ожидались два числовых значения (mass, height).\n";
-        return 1;
+    cout << "Введите рост (м): ";
+    cin >> height;
+
+    if (height > 0) {
+        bmi = mass / (height * height);
+
+        cout << "BMI = " << bmi << endl;
     }
-
-    // Проверка корректности входных данных
-    if (height <= 0.0) {
-        std::cerr << "Ошибка: рост должен быть положительным.\n";
-        return 1;
+    else {
+        cout << "Ошибка: рост должен быть положительным." << endl;
     }
-    if (mass <= 0.0) {
-        std::cerr << "Ошибка: масса должна быть положительной.\n";
-        return 1;
-    }
-
-    const double bmi = mass / (height * height);
-
-    std::cout << std::fixed << std::setprecision(2);
-    std::cout << "Масса:  " << mass  << " кг\n";
-    std::cout << "Рост:   " << height << " м\n";
-    std::cout << "BMI = " << mass << " / (" << height << " * " << height
-              << ") = " << bmi << "\n";
-
-    // Справочная интерпретация значения (в дополнение к заданию)
-    std::cout << "Категория: ";
-    if      (bmi < 16.0)  std::cout << "выраженный дефицит массы\n";
-    else if (bmi < 18.5)  std::cout << "дефицит массы\n";
-    else if (bmi < 25.0)  std::cout << "норма\n";
-    else if (bmi < 30.0)  std::cout << "избыточная масса (предожирение)\n";
-    else if (bmi < 35.0)  std::cout << "ожирение I степени\n";
-    else if (bmi < 40.0)  std::cout << "ожирение II степени\n";
-    else                  std::cout << "ожирение III степени\n";
 
     return 0;
 }
