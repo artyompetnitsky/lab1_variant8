@@ -9,15 +9,23 @@
 lab1-variant8/
 ├── .gitignore
 ├── README.md
+├── lab1-variant8.sln           # решение для Visual Studio (F5 работает)
 ├── docs/
 │   ├── task1_flowchart.drawio   # блок-схема задания 1 (редактируется в draw.io)
 │   └── task1_flowchart.png      # та же схема в виде картинки
 ├── scripts/
 │   ├── build.bat                # сборка обоих заданий через MSVC
 │   └── run_tests.bat            # прогон тестовых наборов
-└── src/
-    ├── task2_bmi.cpp            # задание 2 — индекс массы тела
-    └── task3_max_min.cpp        # задание 3 — максимум и минимум из трёх чисел
+├── src/
+│   ├── task2_bmi.cpp            # задание 2 — индекс массы тела
+│   ├── task3_max_min.cpp        # задание 3 — максимум и минимум из трёх чисел
+│   ├── task2_bmi/
+│   │   └── task2_bmi.vcxproj    # проект Visual Studio для задания 2
+│   └── task3_max_min/
+│       └── task3_max_min.vcxproj# проект Visual Studio для задания 3
+└── .vscode/                     # конфигурация VS Code (не попадает в репозиторий)
+    ├── tasks.json
+    └── launch.json
 ```
 
 > Значения BMI и «Максимум/Минимум» выводятся без округления. Если нужен вид `22.86` / `7.00`,
@@ -178,8 +186,42 @@ BMI = 26.3158
 
 Нужна Visual Studio с компонентами «Разработка классических приложений на C++».
 
+### Способ 1 — Visual Studio (самый простой)
+
+Открой файл решения `lab1-variant8.sln`. В обозревателе решений два проекта — `task2_bmi`
+и `task3_max_min`. Ставишь нужный проект по умолчанию (правый клик по проекту →
+*Set as Startup Project*), жмёшь **F5** — работает, отладка и точки останова тоже.
+
+Сборка из командной строки:
+
+```bat
+msbuild lab1-variant8.sln /t:Rebuild /p:Configuration=Release /p:Platform=x64
+```
+
+### Способ 2 — VS Code
+
+Открой **папку** `lab1-variant8` через *File → Open Folder* (именно папку, а не файл `.cpp`),
+иначе `${workspaceFolder}` будет указывать не туда. Расширение **C/C++** от Microsoft
+(`ms-vscode.cpptools`) обязательно — без него VS Code не знает, как отлаживать MSVC.
+
+Готовые конфиги лежат в `.vscode/`:
+
+| Действие | Как |
+|---|---|
+| Собрать оба задания | `Ctrl+Shift+B` или `Terminal → Run Task → build` |
+| Запустить задание 2 | `Terminal → Run Task → run task2 (BMI)` |
+| Запустить задание 3 | `Terminal → Run Task → run task3 (max/min)` |
+| Прогнать все тесты | `Terminal → Run Task → run all tests` |
+| Отладка | панель *Run and Debug* → «Отладка задания 2 (BMI)» → **F5** |
+
+> В списке отладчиков выбирай **«C++ (msvc)»** (`cppvsdbg`), а **не** «C++ (GDB/LLDB)» —
+> gdb на машине нет, поэтому VS Code и предлагает «подключиться к процессу».
+
+### Способ 3 — просто batch-скрипты (без IDE)
+
 ```bat
 scripts\build.bat
+scripts\run_tests.bat
 ```
 
 Скрипт сам находит Visual Studio через `vswhere`, подключает `vcvars64.bat` и компилирует оба файла

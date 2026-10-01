@@ -22,7 +22,7 @@ x86/
 *.log
 *.lastbuildstate
 
-# ---- Visual Studio / Rider / Codeium ----
+# ---- Visual Studio / Rider / VS Code ----
 .vs/
 .vscode/
 .idea/
@@ -32,6 +32,7 @@ x86/
 *.sln.docstates
 *.aps
 *.ncb
+.vcxproj.user
 
 # ---- Прочее ----
 *.tmp
