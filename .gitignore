@@ -1,0 +1,52 @@
+# ---- Сборочные артефакты (MSVC / MinGW / CMake) ----
+build/
+bin/
+out/
+obj/
+Debug/
+Release/
+x64/
+x86/
+*.exe
+*.dll
+*.lib
+*.exp
+*.pdb
+*.ilk
+*.obj
+*.o
+*.a
+*.map
+*.idb
+*.tlog
+*.log
+*.lastbuildstate
+
+# ---- Visual Studio / Rider / Codeium ----
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.aps
+*.ncb
+
+# ---- Прочее ----
+*.tmp
+*.bak
+*~
+Thumbs.db
+desktop.ini
+.DS_Store
+
+# ---- Секреты: НИКОГДА не коммитить ----
+.env
+.env.*
+*.pem
+*.key
+id_rsa
+id_rsa.pub
+secrets.json
+credentials.json
