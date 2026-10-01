@@ -251,12 +251,12 @@ g++ -std=c++17 -Wall -Wextra src/task3_max_min.cpp -o build/task3_max_min
 
 ## Задание 4. Git / GitHub
 
-Репозиторий: **https://github.com/artyompetnitsky/lab1-variant8**
+Репозиторий: **https://github.com/artyompetnitsky/lab1_variant8**
 
 Автор всех коммитов — `Artyom Petnitsky <artyompetnitsky@gmail.com>`.
 
 В репозитории лежат исходный код `.cpp`, решение `.sln`, `.gitignore`, `README.md` и история
-из шести осмысленных коммитов. Папка `build/` с исполняемыми файлами и служебная `.vscode/`
+из семи осмысленных коммитов. Папка `build/` с исполняемыми файлами и служебная `.vscode/`
 в репозиторий не попадают — см. `.gitignore`.
 
 | Файл | Назначение |
@@ -283,7 +283,7 @@ git commit -m "lab1 var8: zadaniya 1-3 - blok-shema, BMI, max/min iz treh chisel
 git add README.md scripts
 git commit -m "lab1 var8: README s opisaniem resheniya i proverennymi dannymi, ..."
 
-git remote add origin https://github.com/artyompetnitsky/lab1-variant8.git
+git remote add origin https://github.com/artyompetnitsky/lab1_variant8.git
 git push -u origin main
 ```
 
@@ -306,7 +306,7 @@ git push -u origin main
    Вместо пароля нужен **Personal Access Token**: `Settings → Developer settings →
    Personal access tokens → Tokens (classic) → Generate new token → scopes: repo`.
 5. Убедиться, что оба коммита видны: `git log --oneline` или страница репозитория на GitHub.
-6. Преподавателю отправить ссылку: **https://github.com/artyompetnitsky/lab1-variant8**
+6. Преподавателю отправить ссылку: **https://github.com/artyompetnitsky/lab1_variant8**
 
 Никакие пароли, токены и API-ключи не коммитились и не хранятся в проекте — авторизация
 GitHub выполняется локально через Git Credential Manager, учётные данные в файлы проекта
