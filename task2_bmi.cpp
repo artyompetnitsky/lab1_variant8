@@ -13,7 +13,7 @@ int main() {
     cin >> height;
 
     if (height > 0) {
-        bmi = mass / (height * height);
+        bmi = mass / (height^2);
 
         cout << "BMI = " << bmi << endl;
     }
