@@ -1,7 +1,10 @@
 #include <iostream>
+#include <cmath>
+
 using namespace std;
+
 double square(double x) {
-    return x * x;
+    return pow(x, 2);
 }
 
 int main() {
