@@ -15,15 +15,10 @@
 |---|---|
 | [`docs/task1_flowchart.drawio`](docs/task1_flowchart.drawio) | задание 1 — блок-схема (исходник для draw.io) |
 | [`docs/task1_flowchart.png`](docs/task1_flowchart.png) | задание 1 — та же схема в виде картинки |
-| [`src/task2_bmi.cpp`](src/task2_bmi.cpp) | задание 2 — индекс массы тела |
-| [`src/task3_max_min.cpp`](src/task3_max_min.cpp) | задание 3 — максимум и минимум из трёх чисел |
-| [`lab1-variant8.sln`](lab1-variant8.sln) | решение Visual Studio |
-| [`scripts/build.bat`](scripts/build.bat) | сборка обоих заданий |
-| [`scripts/run_tests.bat`](scripts/run_tests.bat) | прогон тестовых наборов |
+| [`task2_bmi.cpp`](task2_bmi.cpp) | задание 2 — индекс массы тела |
+| [`task3_max_min.cpp`](task3_max_min.cpp) | задание 3 — максимум и минимум из трёх чисел |
 | [`.gitignore`](.gitignore) | исключения для git |
-
-Служебные папки `build/` (исполняемые файлы) и `.vscode/` (конфигурация редактора) создаются
-локально и в репозиторий не попадают — см. `.gitignore`.
+| [`README.md`](README.md) | этот отчёт |
 
 ---
 
@@ -90,7 +85,7 @@ draw.io установлен. Для просмотра без редактир�
 
 ## Задание 2. Индекс массы тела (BMI)
 
-Исходный код: [`src/task2_bmi.cpp`](src/task2_bmi.cpp)
+Исходный код: [`task2_bmi.cpp`](task2_bmi.cpp)
 
 **Входные данные:** `mass` — масса тела в килограммах, `height` — рост в метрах (`double`).
 **Результат:** `BMI = mass / (height · height)`.
@@ -129,7 +124,7 @@ BMI = 26.3158
 
 ## Задание 3. Максимум и минимум из трёх чисел
 
-Исходный код: [`src/task3_max_min.cpp`](src/task3_max_min.cpp)
+Исходный код: [`task3_max_min.cpp`](task3_max_min.cpp)
 
 **Входные данные:** три вещественных числа `a`, `b`, `c`.
 **Результат:** наибольшее и наименьшее из трёх чисел.
@@ -190,7 +185,7 @@ BMI = 26.3158
 | Требование | Результат |
 |---|---|
 | Отдельный репозиторий для лабы | `artyompetnitsky/lab1_variant8`, публичный |
-| Исходный `.cpp` код | `src/task2_bmi.cpp`, `src/task3_max_min.cpp` |
+| Исходный `.cpp` код | `task2_bmi.cpp`, `task3_max_min.cpp` |
 | Корректный `.gitignore` | на месте, `build/` и `.vscode/` отсечены |
 | `README.md` | этот отчёт |
 | Минимум два осмысленных коммита | 8 коммитов |
