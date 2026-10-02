@@ -1,7 +1,8 @@
-// Задание 2. Индекс массы тела (BMI).
-
 #include <iostream>
 using namespace std;
+double square(double x) {
+    return x * x;
+}
 
 int main() {
     double mass, height, bmi;
@@ -13,7 +14,7 @@ int main() {
     cin >> height;
 
     if (height > 0) {
-        bmi = mass / (height^2);
+        bmi = mass / square(height);
 
         cout << "BMI = " << bmi << endl;
     }
